@@ -174,12 +174,11 @@
         <div class="calc-note">油:辣椒≈2:1；牛肉炸干后入汤熬 1~2h。</div>
       </div>
       <div class="calc-box">
-        <h4>🥗 辣菜 · 统一调味（每道）</h4>
-        <div class="row"><span>盐（每道都加）</span><b id="l_salt">—</b></div>
-        <div class="row"><span>味精（每道都加）</span><b id="l_msg">—</b></div>
-        <div class="row"><span>白芝麻（每道都加）</span><b id="l_sesame">—</b></div>
-        <div class="row"><span>辣椒油/料油（每250g主料）</span><b id="l_oil">—</b></div>
-        <div class="calc-note">所有辣菜统一加盐/味精/芝麻；酸甜口味另加糖/醋。油≈主料 1/5。</div>
+        <h4>🥗 辣菜 · 调味建议起步量（每道）</h4>
+        <div class="row"><span>盐</span><b id="l_salt">—</b></div>
+        <div class="row"><span>味精</span><b id="l_msg">—</b></div>
+        <div class="row"><span>白芝麻</span><b id="l_sesame">—</b></div>
+        <div class="calc-note">标准原文为「适量」，此为方便家庭的<b>建议起步量</b>；所有辣菜都加盐/味精/芝麻，酸甜另加糖/醋。<b>用油标准未给克数</b>，以「红油包裹、油亮」为准。</div>
       </div>
     </div>
     <div class="calc-note" style="padding:0 26px 4px">★ 上述为按标准比例/民间做法换算，刀削面与辣菜调味按口味"边尝边补"，未逐项缩放。</div>
@@ -318,57 +317,48 @@ flowchart TD
     </div>
   </section>
 
-  <!-- 辣菜：分量 -->
+  <!-- 辣菜：配料·口味·用油（依标准，不含臆测克数） -->
   <section class="card">
     <div class="bar c-side"></div>
-    <h2>🥗 辣菜 · 4人份参考量</h2>
+    <h2>🥗 辣菜 · 配料·口味·用油（依标准，无臆测克数）</h2>
+    <div class="spec" style="padding-bottom:4px">标准对辣菜的<b>调味、配料、用油量</b>均写「<b>适量</b>」，配料只列名称、不给重量。故此表只给标准明确的：<b>用什么料、什么口味、哪种油</b>；不编造克数。精确数字见上方「源头精确配比」。</div>
+    <div class="uni">🧂 <b>调味通则（标准均「适量」，无克数）</b>：所有辣菜加 <b>盐·味精·白芝麻</b>；酸甜口味另加 <b>白糖·白醋</b>（山桔梗用醋精；拌粉皮另有少许白糖+酱油）。</div>
     <div class="oil-legend">
-      油量图例：
+      用油类型：
       <span class="chip oilA">带椒辣油</span>
       <span class="chip oilB">无椒/稍带椒</span>
       <span class="chip oilC">料油（不辣）</span>
-      <span>· 单位 g/ml · 标准多写「适量」，克数为参考估算（★ 除外）</span>
     </div>
-    <div class="uni">🧂 <b>统一调味（所有辣菜通用，按份数加入）</b>：每 4 人份 <b>盐 3g · 味精 2g · 白芝麻 2g</b>（每人 ≈ 0.75 / 0.5 / 0.5 g）。酸甜口味在此基础上另加糖/醋（见下表）。</div>
-    <div class="subh">按食材分类 · 各道不同的部分</div>
     <div class="scroll">
       <table class="tbl">
-        <thead><tr><th>辣菜</th><th>口味</th><th class="left">主料</th><th class="left">配料</th><th>糖/醋</th><th>用油</th></tr></thead>
+        <thead><tr><th>辣菜</th><th>口味</th><th class="left">主料（切配）</th><th class="left">配料</th><th>用油</th></tr></thead>
         <tbody>
-          <tr class="catrow"><td colspan="6">🫘 豆制品</td></tr>
-          <tr><td class="dish">干豆腐</td><td><span class="chip tagS">咸</span></td><td class="left">干豆腐 250</td><td class="left"><span class="star">★</span>包心菜 75（3:10）</td><td>—</td><td><span class="chip oilA">带椒 50</span></td></tr>
-          <tr><td class="dish">豆腐钱</td><td><span class="chip tagS">咸</span></td><td class="left">豆腐卷 250</td><td class="left">包白菜50·圆葱30·胡萝卜30·芹菜30</td><td>—</td><td><span class="chip oilA">带椒 50</span></td></tr>
-          <tr><td class="dish">豆腐泡</td><td><span class="chip tagT">甜</span></td><td class="left">豆腐泡 200</td><td class="left">—</td><td>糖8·白醋10</td><td><span class="chip oilA">带椒 40</span></td></tr>
-          <tr><td class="dish">腐竹</td><td><span class="chip tagT">甜</span></td><td class="left">泡发后 250</td><td class="left">胡萝卜30·圆葱30·芹菜30</td><td>糖8·白醋12</td><td><span class="chip oilA">带椒 50</span></td></tr>
-          <tr class="catrow"><td colspan="6">🥬 蔬菜·野菜</td></tr>
-          <tr><td class="dish">黄豆芽</td><td><span class="chip tagS">咸</span></td><td class="left">黄豆芽 300</td><td class="left">圆葱30·胡萝卜30·芹菜叶30</td><td>—</td><td><span class="chip oilA">带椒 60</span></td></tr>
-          <tr><td class="dish">大头菜</td><td><span class="chip tagS">咸</span></td><td class="left">大头菜 250</td><td class="left">—</td><td>—</td><td><span class="chip oilA">带椒 50</span></td></tr>
-          <tr><td class="dish">土豆丝</td><td><span class="chip tagS">咸</span></td><td class="left">马铃薯 250</td><td class="left">芹菜30·圆葱30·胡萝卜30</td><td>—</td><td><span class="chip oilC">料油 45</span></td></tr>
-          <tr><td class="dish">拌菠菜</td><td><span class="chip tagS">咸</span></td><td class="left">菠菜 300</td><td class="left">胡萝卜30·圆葱30</td><td>—</td><td><span class="chip oilC">料油 55</span></td></tr>
-          <tr><td class="dish">蕨菜</td><td><span class="chip tagS">咸</span></td><td class="left">泡发后 250</td><td class="left">胡萝卜30·圆葱30</td><td>—</td><td><span class="chip oilB">无椒 50</span></td></tr>
-          <tr><td class="dish">黄花菜</td><td><span class="chip tagT">甜</span></td><td class="left">泡发后 200</td><td class="left">圆葱30·芹菜30</td><td>糖6</td><td><span class="chip oilA">带椒 40</span></td></tr>
-          <tr><td class="dish">山桔梗</td><td><span class="chip tagT">甜</span></td><td class="left">泡发后 200</td><td class="left">—</td><td>糖8·醋精少许</td><td><span class="chip oilA">带椒 40</span></td></tr>
-          <tr class="catrow"><td colspan="6">🌊 菌藻·水产</td></tr>
-          <tr><td class="dish">海带丝/裙带菜</td><td><span class="chip tagS">咸</span></td><td class="left">泡发后 250</td><td class="left">胡萝卜30·圆葱30</td><td>—</td><td><span class="chip oilA">带椒 50</span></td></tr>
-          <tr><td class="dish">明太鱼丝</td><td><span class="chip tagT">甜</span></td><td class="left">干明太鱼 100</td><td class="left">喷水回软</td><td>糖8·白醋10</td><td><span class="chip oilB">稍带椒 30</span></td></tr>
-          <tr><td class="dish">蚬子肉</td><td><span class="chip tagT">甜</span></td><td class="left">泡发后 200</td><td class="left">圆葱丁30</td><td>糖6</td><td><span class="chip oilB">无椒 40</span></td></tr>
-          <tr class="catrow"><td colspan="6">🥩 肉类</td></tr>
-          <tr><td class="dish">牛肉片</td><td><span class="chip tagS">咸</span></td><td class="left">熟牛肉 250</td><td class="left">青椒50·胡萝卜30</td><td>—</td><td><span class="chip oilA">带椒 50</span></td></tr>
-          <tr class="catrow"><td colspan="6">🥜 坚果·粉皮</td></tr>
-          <tr><td class="dish">花生米</td><td><span class="chip tagS">咸</span></td><td class="left">花生米 200</td><td class="left">芹菜30·胡萝卜丁30</td><td>—</td><td><span class="chip oilC">料油 40</span></td></tr>
-          <tr><td class="dish">拌粉皮</td><td><span class="chip tagS">咸</span></td><td class="left">粉皮 250</td><td class="left">黄瓜80·圆葱30·胡萝卜30·香菜10</td><td>糖少许3·酱油10</td><td><span class="chip oilC">料油 45</span></td></tr>
+          <tr class="catrow"><td colspan="5">🫘 豆制品</td></tr>
+          <tr><td class="dish">干豆腐</td><td><span class="chip tagS">咸</span></td><td class="left">手工干豆腐（5mm·30～40mm片）</td><td class="left"><span class="star">★</span>包心菜（与干豆腐 3:10）</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr><td class="dish">豆腐钱</td><td><span class="chip tagS">咸</span></td><td class="left">豆腐卷（5～8mm圆片）</td><td class="left">包白菜·白圆葱丝·胡萝卜丝·焯芹菜段</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr><td class="dish">豆腐泡</td><td><span class="chip tagT">甜</span></td><td class="left">炸豆腐泡</td><td class="left">—</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr><td class="dish">腐竹</td><td><span class="chip tagT">甜</span></td><td class="left">泡发腐竹（40mm段）</td><td class="left">胡萝卜丝·白圆葱丝·焯芹菜段</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr class="catrow"><td colspan="5">🥬 蔬菜·野菜</td></tr>
+          <tr><td class="dish">黄豆芽</td><td><span class="chip tagS">咸</span></td><td class="left">黄豆芽（焯断生）</td><td class="left">白圆葱丝·胡萝卜丝·焯芹菜叶</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr><td class="dish">大头菜</td><td><span class="chip tagS">咸</span></td><td class="left">大头菜（切丝/块）</td><td class="left">—</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr><td class="dish">土豆丝</td><td><span class="chip tagS">咸</span></td><td class="left">马铃薯丝（焯断生）</td><td class="left">芹菜段·圆葱丝·胡萝卜丝</td><td><span class="chip oilC">料油</span></td></tr>
+          <tr><td class="dish">拌菠菜</td><td><span class="chip tagS">咸</span></td><td class="left">菠菜（焯·攥干·切段）</td><td class="left">胡萝卜丝·白圆葱丝</td><td><span class="chip oilC">料油</span></td></tr>
+          <tr><td class="dish">蕨菜</td><td><span class="chip tagS">咸</span></td><td class="left">蕨菜（泡36h·80mm段·焯）</td><td class="left">胡萝卜丝·白圆葱丝</td><td><span class="chip oilB">无椒</span></td></tr>
+          <tr><td class="dish">黄花菜</td><td><span class="chip tagT">甜</span></td><td class="left">黄花菜（泡1h）</td><td class="left">白圆葱丝·焯芹菜段</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr><td class="dish">山桔梗</td><td><span class="chip tagT">甜</span></td><td class="left">山桔梗（泡发·糖+醋精泡制）</td><td class="left">—</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr class="catrow"><td colspan="5">🌊 菌藻·水产</td></tr>
+          <tr><td class="dish">海带丝/裙带菜</td><td><span class="chip tagS">咸</span></td><td class="left">海带丝80～100mm／裙带菜50mm（焯·过凉）</td><td class="left">胡萝卜丝·白圆葱丝</td><td><span class="chip oilA">带椒¹</span></td></tr>
+          <tr><td class="dish">明太鱼丝</td><td><span class="chip tagT">甜</span></td><td class="left">干明太鱼撕丝（喷水回软）</td><td class="left">—</td><td><span class="chip oilB">稍带椒</span></td></tr>
+          <tr><td class="dish">蚬子肉</td><td><span class="chip tagT">甜</span></td><td class="left">蚬子肉（泡发·去脏）</td><td class="left">圆葱丁（10mm）</td><td><span class="chip oilB">无椒</span></td></tr>
+          <tr class="catrow"><td colspan="5">🥩 肉类</td></tr>
+          <tr><td class="dish">牛肉片</td><td><span class="chip tagS">咸</span></td><td class="left">酱熟牛肉（60mm长·3～4mm厚）</td><td class="left">青椒丝·胡萝卜丝</td><td><span class="chip oilA">带椒</span></td></tr>
+          <tr class="catrow"><td colspan="5">🥜 坚果·粉皮</td></tr>
+          <tr><td class="dish">花生米</td><td><span class="chip tagS">咸</span></td><td class="left">花生米（葱姜八角花椒盐卤煮）</td><td class="left">芹菜段·胡萝卜丁</td><td><span class="chip oilC">料油</span></td></tr>
+          <tr><td class="dish">拌粉皮</td><td><span class="chip tagS">咸</span></td><td class="left">粉皮</td><td class="left">黄瓜片·白圆葱丝·胡萝卜丝·香菜段</td><td><span class="chip oilC">料油²</span></td></tr>
         </tbody>
       </table>
     </div>
-    <div class="subh">辣椒油 / 料油 用量（红油包裹、油亮）</div>
-    <div class="spec">辣菜拌到 <b>油亮、红油裹住主料</b> —— 油约 <b>主料重量的 1/5（≈20%）</b>：每 250g 主料约 <b>50g</b>（≈3~3.5 大勺）。带椒为主；蕨菜·蚬子肉用无椒，明太鱼稍带椒；土豆丝·花生米·菠菜·粉皮改料油。</div>
-    <div class="stats">
-      <div class="stat"><div class="n">≈20%</div><div class="l">油 / 主料 比例</div></div>
-      <div class="stat"><div class="n">50g</div><div class="l">每 250g 主料用油</div></div>
-      <div class="stat"><div class="n">≈400g</div><div class="l">全套辣椒油合计</div></div>
-      <div class="stat"><div class="n">≈185g</div><div class="l">全套料油合计</div></div>
-      <div class="stat"><div class="n">350+175</div><div class="l">炼油：豆油+辣椒(g)·2:1</div></div>
-    </div>
+    <div class="spec"><b>用油量</b>：标准只规定<b>类型</b>（带椒/无椒/料油）与成品<b>「色泽油亮」</b>，<b>未给克数</b>；以「红油包裹、油亮」为准自行掌握。<br>注：① 海带丝也可改「料油+蒜蓉+盐+味精」；② 拌粉皮另加少许白糖+酱油（标准）。</div>
   </section>
 
   <footer>
@@ -418,7 +408,6 @@ flowchart TD
     $('l_salt').textContent   = fmt(0.75*n,' g');
     $('l_msg').textContent    = fmt(0.5*n,' g');
     $('l_sesame').textContent = fmt(0.5*n,' g');
-    $('l_oil').textContent    = '约 ' + fmt(50,' g') + '（≈主料1/5，不随份数）';
   }
   $('srv').addEventListener('input', ()=>{ setActive(parseFloat($('srv').value)); calc(); });
   function setActive(n){ document.querySelectorAll('.qbtn').forEach(b=>b.classList.toggle('act', +b.dataset.n===n)); }
