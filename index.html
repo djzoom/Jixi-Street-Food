@@ -3,431 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>鸡西大冷面 · 刀削面 · 辣菜 — 小百科</title>
+<title>鸡西三味 · 大冷面 · 刀削面 · 辣菜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f5f1; --card:#ffffff; --ink:#2b2b2b; --muted:#7a766e;
-    --soup:#e8633a; --noodle:#3a72e8; --side:#36a35a; --oil:#a64ee0; --finish:#e0a800;
+    --paper:#f7f3ea; --surface:#fffdf8; --ink:#221d18; --soft:#6c6358; --faint:#9a9184;
+    --line:#e7dfd1; --line-2:#efe9dd;
+    --chili:#c1432b; --chili-2:#a8371f; --amber:#d3892f; --ice:#3a6ea8; --herb:#4f7a48; --plum:#8a567f; --gold:#b1832a;
+    --shadow:0 10px 34px rgba(60,42,20,.08);
+    --serif:"Noto Serif SC","Songti SC","STSong",serif;
+    --sans:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
   }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-       background:var(--bg);color:var(--ink);line-height:1.6}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px 64px}
-  header.hero{text-align:center;padding:40px 20px 22px}
-  header.hero h1{margin:0;font-size:31px;letter-spacing:1px}
-  header.hero p{margin:8px 0 0;color:var(--muted)}
-  .legend{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0 0}
-  .legend span{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
-  .dot{width:12px;height:12px;border-radius:3px;display:inline-block}
-  /* nav */
-  .nav{position:sticky;top:0;z-index:10;background:rgba(246,245,241,.92);backdrop-filter:blur(6px);
-       display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px;border-bottom:1px solid #e7e3da;margin-bottom:8px}
-  .nav a{font-size:13px;color:#56524b;text-decoration:none;padding:6px 13px;border-radius:999px;font-weight:600}
-  .nav a:hover{background:#eceae3}
-  /* card */
-  .card{background:var(--card);border-radius:18px;padding:0 0 22px;margin:22px 0;
-        box-shadow:0 6px 22px rgba(0,0,0,.06);overflow:hidden;scroll-margin-top:64px}
-  .card .bar{height:8px}
-  .card h2{display:flex;align-items:center;gap:10px;margin:0;padding:20px 26px 6px;font-size:22px}
-  .lead{padding:0 26px;color:var(--muted);font-size:14px}
-  .badges{display:flex;flex-wrap:wrap;gap:8px;padding:8px 26px 14px}
-  .badge{font-size:12.5px;padding:4px 11px;border-radius:999px;background:#f0eee9;color:#56524b;font-weight:600}
-  .diagram{padding:6px 12px 0;text-align:center;overflow-x:auto}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  section{scroll-margin-top:70px}
+  a{color:inherit}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(247,243,234,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .nav .brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.5px}
+  .nav .links{display:flex;gap:4px;flex-wrap:wrap}
+  .nav a{font-size:13.5px;color:var(--soft);text-decoration:none;padding:7px 13px;border-radius:99px;font-weight:500;transition:.2s}
+  .nav a:hover{background:#efe7d8;color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{text-align:center;padding:78px 0 52px}
+  .eyebrow{font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:var(--chili);font-weight:700;margin-bottom:22px}
+  .hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(46px,9vw,86px);line-height:1.02;letter-spacing:2px}
+  .hero .sub{font-family:var(--serif);font-size:clamp(15px,2.4vw,19px);color:var(--soft);margin-top:20px;font-style:italic;letter-spacing:.5px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+  .meta span{font-size:12.5px;font-weight:600;color:var(--soft);background:var(--surface);border:1px solid var(--line);padding:7px 15px;border-radius:99px}
+  .rule{width:46px;height:3px;background:var(--chili);border-radius:3px;margin:40px auto 0}
+
+  /* ---------- section heading ---------- */
+  .shead{display:flex;align-items:baseline;gap:16px;margin:0 0 26px}
+  .shead .idx{font-family:var(--serif);font-weight:900;font-size:34px;color:var(--line);line-height:1}
+  .shead .t{font-family:var(--serif);font-weight:700;font-size:26px;letter-spacing:1px}
+  .shead .lede{font-size:14px;color:var(--soft);margin-left:auto;max-width:46%;text-align:right}
+  .block{padding:54px 0;border-top:1px solid var(--line)}
+
+  /* ---------- ratio tiles ---------- */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 18px;position:relative;overflow:hidden}
+  .tile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--chili))}
+  .tile .r{font-family:var(--serif);font-weight:900;font-size:27px;letter-spacing:.5px;color:var(--ink)}
+  .tile .k{font-size:12.5px;color:var(--soft);margin-top:8px;font-weight:600}
+  .tile .s{font-size:11px;color:var(--faint);margin-top:3px}
+
+  /* ---------- calculator ---------- */
+  .calc{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+  .stepper{display:flex;align-items:center;justify-content:center;gap:22px;margin-bottom:26px}
+  .stepper button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:24px;color:var(--ink);cursor:pointer;line-height:1;transition:.15s;font-family:var(--serif)}
+  .stepper button:hover{background:var(--chili);color:#fff;border-color:var(--chili)}
+  .stepper .val{font-family:var(--serif);font-weight:900;font-size:46px;min-width:96px;text-align:center}
+  .stepper .val small{font-size:16px;color:var(--soft);font-weight:500;margin-left:4px}
+  .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .rc{border:1px solid var(--line-2);border-radius:16px;padding:18px}
+  .rc h4{font-family:var(--serif);font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+  .rc .ln{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px dashed var(--line-2)}
+  .rc .ln:last-of-type{border-bottom:0}
+  .rc .ln b{font-variant-numeric:tabular-nums;color:var(--chili-2);font-weight:700}
+  .rc .note{font-size:11px;color:var(--faint);margin-top:9px;line-height:1.55}
+
+  /* ---------- recipe columns ---------- */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.cols{grid-template-columns:1fr}.shead .lede{display:none}.shead{flex-wrap:wrap}}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+  .panel h3{font-family:var(--serif);font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .ing{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line-2)}
+  .ing:last-child{border-bottom:0}
+  .ing .v{font-variant-numeric:tabular-nums;color:var(--soft);white-space:nowrap}
+  .star{color:var(--gold);font-weight:800}
+  .tagline{font-size:13px;color:var(--soft);margin:2px 0 18px}
+
+  /* ---------- tips ---------- */
+  .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+  .tip{border-left:3px solid var(--accent,var(--ice));background:var(--surface);border-radius:0 12px 12px 0;padding:13px 16px}
+  .tip b{font-size:13.5px;display:block;margin-bottom:3px}
+  .tip span{font-size:12.5px;color:var(--soft)}
+
+  /* ---------- process diagram ---------- */
+  .flow{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 8px;overflow-x:auto;text-align:center}
+  .flow .cap{font-size:12px;color:var(--faint);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
   .mermaid{display:inline-block;min-width:280px}
-  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
-  .c-soup{background:var(--soup)} .c-noodle{background:var(--noodle)}
-  .c-side{background:var(--side)} .c-oil{background:var(--oil)} .c-calc{background:var(--finish)}
-  /* terms */
-  .terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;padding:8px 26px 12px}
-  .term{background:#fafafa;border:1px solid #eee7da;border-radius:12px;padding:12px 14px;font-size:13px}
-  .term b{display:block;margin-bottom:4px;color:#16306e;font-size:14px}
-  .meta{display:flex;flex-wrap:wrap;gap:10px;padding:4px 26px 16px}
-  .meta .m{background:#eef4ff;border:1px solid #cfe0ff;border-radius:8px;padding:6px 11px;font-size:12.5px;color:#2a4a8a}
-  /* table */
-  .scroll{overflow-x:auto;padding:0 18px}
-  .tbl{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0 10px;min-width:560px}
-  .tbl th,.tbl td{padding:7px 8px;border-bottom:1px solid #efece6;text-align:center;vertical-align:middle}
-  .tbl th{background:#faf8f4;color:#56524b;font-weight:700}
-  .tbl td.dish{font-weight:700;text-align:left;white-space:nowrap}
-  .tbl td.left{text-align:left;color:#56524b}
-  .tbl tr:hover td{background:#fcfbf8}
-  .chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
-  .oilA{background:#e8633a;color:#fff} .oilB{background:#f3a259;color:#5a2e10} .oilC{background:#e9b21e;color:#3a2c00}
-  .tagS{background:#fdeae2;color:#a8431f} .tagT{background:#e7eefc;color:#274a9c}
-  .catrow td{background:#f3efe6;font-weight:800;text-align:left;color:#56524b;font-size:13.5px}
-  .uni{margin:8px 26px 2px;padding:10px 14px;background:#fff6ed;border:1px solid #f1cba9;border-radius:10px;font-size:13px;color:#7a4a2a}
-  .star{color:#c9971a;font-weight:800}
-  .subh{padding:14px 26px 0;font-weight:800;font-size:15px;color:#444}
-  .callouts{display:flex;flex-wrap:wrap;gap:12px;padding:8px 26px 6px}
-  .callout{flex:1 1 240px;background:#fffbe9;border:1px solid #ecd98f;border-radius:12px;padding:11px 14px}
-  .callout b{display:block;font-size:12.5px;color:#8a6d12;margin-bottom:2px}
-  .callout .v{font-size:17px;font-weight:800;color:#5a4708}
-  .spec{padding:8px 26px 14px;color:var(--muted);font-size:12.5px;line-height:1.85}
-  .oil-legend{display:flex;flex-wrap:wrap;gap:14px;padding:10px 26px 2px;font-size:12.5px;color:var(--muted);align-items:center}
-  .stats{display:flex;flex-wrap:wrap;gap:12px;padding:10px 26px 18px}
-  .stat{flex:1 1 150px;background:#fff4ef;border:1px solid #f0c4b2;border-radius:12px;padding:12px 14px;text-align:center}
-  .stat .n{font-size:21px;font-weight:800;color:#c2461f}
-  .stat .l{font-size:12px;color:#8a5a45;margin-top:3px}
-  /* calculator */
-  .calc-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 26px 4px}
-  .calc-controls label{font-weight:700}
-  .calc-controls input{width:84px;font-size:20px;padding:6px 10px;border:1px solid #d8d2c6;border-radius:8px;text-align:center}
-  .qbtn{cursor:pointer;border:1px solid #d8d2c6;background:#faf8f4;border-radius:8px;padding:6px 13px;font-weight:700;color:#56524b}
-  .qbtn:hover{background:#efece4}
-  .qbtn.act{background:var(--finish);color:#fff;border-color:var(--finish)}
-  .calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:14px;padding:10px 26px 8px}
-  .calc-box{border:1px solid #eee7da;border-radius:14px;padding:14px 16px;background:#fff}
-  .calc-box h4{margin:0 0 8px;font-size:14px;display:flex;align-items:center;gap:6px}
-  .calc-box .row{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;border-bottom:1px dashed #f0ece4}
-  .calc-box .row span:first-child{color:#56524b}
-  .calc-box .row b{font-variant-numeric:tabular-nums;color:#c2461f}
-  .calc-note{font-size:11.5px;color:#9a958c;margin-top:8px;line-height:1.6}
+
+  /* ---------- chips / table ---------- */
+  .chip{display:inline-block;padding:2px 10px;border-radius:99px;font-size:11.5px;font-weight:700;white-space:nowrap}
+  .oA{background:#f6e4de;color:#a8371f} .oB{background:#f7ead7;color:#9a6322} .oC{background:#eef0e3;color:#5b6b2f}
+  .tS{background:#f6e4de;color:#a8371f} .tT{background:#e3ebf5;color:#2c5896}
+  .ruleline{background:linear-gradient(0deg,#fff7ed,#fffdf8);border:1px solid #f0dcc2;border-radius:14px;padding:13px 18px;font-size:13px;margin-bottom:18px}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line-2)}
+  th{background:#faf6ee;font-weight:700;color:var(--soft);font-size:12px;letter-spacing:.5px}
+  tr:last-child td{border-bottom:0}
+  td.dish{font-weight:700;white-space:nowrap}
+  .catr td{background:#f4efe4;font-family:var(--serif);font-weight:700;color:var(--ink);font-size:13.5px}
+  .center{text-align:center}
+
+  footer{border-top:1px solid var(--line);padding:38px 0 60px;text-align:center;color:var(--faint);font-size:12.5px}
+  footer .fb{font-family:var(--serif);font-size:15px;color:var(--soft);margin-bottom:8px}
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="#intro">关于</a>
-  <a href="#calc">配方计算器</a>
-  <a href="#lengmian">冷面</a>
-  <a href="#daoxiao">刀削面</a>
-  <a href="#lacai">辣菜</a>
-</nav>
+<nav class="nav"><div class="wrap">
+  <span class="brand">鸡西三味</span>
+  <span class="links">
+    <a href="#ratios">黄金比例</a>
+    <a href="#calc">换算器</a>
+    <a href="#lengmian">冷面</a>
+    <a href="#daoxiao">刀削面</a>
+    <a href="#lacai">辣菜</a>
+  </span>
+</div></nav>
 
 <div class="wrap">
 
+  <!-- HERO -->
   <header class="hero">
-    <h1>🍜 鸡西大冷面 · 刀削面 · 辣菜 小百科</h1>
-    <p>术语 · 精确配比 · 交互配方计算 · 制作流程 一页通</p>
-    <div class="legend">
-      <span><i class="dot" style="background:var(--soup)"></i>汤/炖煮</span>
-      <span><i class="dot" style="background:var(--noodle)"></i>面/凉拌主料</span>
-      <span><i class="dot" style="background:var(--oil)"></i>炼油/炸料</span>
-      <span><i class="dot" style="background:var(--side)"></i>配菜/配料</span>
-      <span><i class="dot" style="background:var(--finish)"></i>定味/装碗</span>
+    <div class="eyebrow">龙江传统美食 · DB23/T 3702—2024</div>
+    <h1>鸡西三味</h1>
+    <div class="sub">大冷面 · 刀削面 · 辣菜 —— 冰镇的酸甜，滚烫的香辣，油亮的凉拌</div>
+    <div class="meta">
+      <span>🧊 碱水压制面</span>
+      <span>❄️ 冰镇 4–8℃</span>
+      <span>🌶️ 香辣带麻</span>
+      <span>🥢 红油凉拌</span>
     </div>
+    <div class="rule"></div>
   </header>
 
-  <!-- 关于/术语 -->
-  <section class="card" id="intro">
-    <div class="bar c-noodle"></div>
-    <h2>📖 关于与术语</h2>
-    <div class="meta">
-      <span class="m">标准 DB23/T 3702—2024</span>
-      <span class="m">2024-06-13 发布 · 07-12 实施</span>
-      <span class="m">黑龙江省市场监督管理局</span>
-      <span class="m">刀削面：无省标，民间做法</span>
+  <!-- RATIOS -->
+  <section class="block" id="ratios">
+    <div class="shead">
+      <span class="idx">★</span>
+      <span class="t">黄金比例</span>
+      <span class="lede">标准里真正确定的数字 —— 一切风味的骨架</span>
     </div>
-    <div class="terms">
-      <div class="term"><b>鸡西大冷面</b>朝鲜族传统冷面基础上发展而来。面条以高筋小麦粉（或荞麦粉）为主、辅木薯/马铃薯淀粉，碱水和面**压制**而成；汤以咸香或酸甜为主；配辣椒油凉拌的辣菜同食。</div>
-      <div class="term"><b>冷面汤</b>以凉（冰）饮用水为主料，醋精、盐、味精、酱油、白糖、小苏打为配料，辅香菜末、黄瓜丝调成，用于浸泡冷面。咸口略带酸甜，4~8℃ 最佳。</div>
-      <div class="term"><b>辣菜</b>即冷面配菜，凉拌技法制作，荤素皆可。感官要求：**色泽油亮、拌制均匀**（即红油包裹）。分咸香、酸甜两种口味。</div>
-      <div class="term"><b>刀削面（鸡西）</b>由传统咸香改为**香、辣**为主，配秘制牛肉条与红汤；配菜多为大头菜、榨菜、干豆腐、香肠、卤蛋。本页按民间正宗做法整理。</div>
+    <div class="tiles">
+      <div class="tile" style="--accent:var(--ice)"><div class="r">10 : 7</div><div class="k">高筋面粉 : 淀粉</div><div class="s">冷面的弹牙</div></div>
+      <div class="tile" style="--accent:var(--ice)"><div class="r">7 : 100</div><div class="k">食用碱 : 水</div><div class="s">琥珀色 · 筋道</div></div>
+      <div class="tile" style="--accent:var(--ice)"><div class="r">50 : 21</div><div class="k">混合粉 : 碱水</div><div class="s">含液 42% · 偏硬</div></div>
+      <div class="tile" style="--accent:var(--chili)"><div class="r">2 : 1</div><div class="k">油 : 辣椒</div><div class="s">炼红油</div></div>
+      <div class="tile" style="--accent:var(--herb)"><div class="r">250:450:1:2</div><div class="k">辣椒面:水:盐:味精</div><div class="s">水发辣椒</div></div>
+      <div class="tile" style="--accent:var(--amber)"><div class="r">3 : 10</div><div class="k">包心菜 : 干豆腐</div><div class="s">唯一的辣菜配比</div></div>
     </div>
   </section>
 
-  <!-- 计算器 -->
-  <section class="card" id="calc">
-    <div class="bar c-calc"></div>
-    <h2>🧮 配方计算器（按份数实时换算）</h2>
-    <p class="lead">基于标准精确比例运算：面粉:淀粉 = 10:7 ｜ 碱:水 = 7:100 ｜ 混合粉:碱水 = 50:21。改份数即自动重算。</p>
-    <div class="calc-controls">
-      <label for="srv">份数</label>
-      <input id="srv" type="number" min="1" max="50" step="1" value="4">
-      <span class="qbtn" data-n="1">1</span>
-      <span class="qbtn" data-n="2">2</span>
-      <span class="qbtn act" data-n="4">4</span>
-      <span class="qbtn" data-n="6">6</span>
-      <span class="qbtn" data-n="8">8</span>
-      <span class="qbtn" data-n="10">10</span>
+  <!-- CALCULATOR -->
+  <section class="block" id="calc">
+    <div class="shead">
+      <span class="idx">＝</span>
+      <span class="t">配方换算器</span>
+      <span class="lede">按比例实时运算，改份数即重算</span>
     </div>
-    <div class="calc-grid">
-      <div class="calc-box">
-        <h4>🧊 冷面 · 面条</h4>
-        <div class="row"><span>高筋面粉</span><b id="c_flour">—</b></div>
-        <div class="row"><span>淀粉（马铃薯/木薯）</span><b id="c_starch">—</b></div>
-        <div class="row"><span>食用碱</span><b id="c_alk">—</b></div>
-        <div class="row"><span>水</span><b id="c_water">—</b></div>
-        <div class="row"><span>盐（可选）</span><b id="c_salt">—</b></div>
-        <div class="calc-note">碱先用 40~50℃ 温水化开；面团偏硬（含液≈42%）。</div>
+    <div class="calc">
+      <div class="stepper">
+        <button id="dec" aria-label="减">−</button>
+        <div class="val"><span id="srvVal">4</span><small>份</small></div>
+        <button id="inc" aria-label="加">+</button>
       </div>
-      <div class="calc-box">
-        <h4>🥢 冷面 · 汤</h4>
-        <div class="row"><span>凉饮用水 10~12℃</span><b id="s_water">—</b></div>
-        <div class="row"><span>醋精 38°（或白醋×6.7）</span><b id="s_vin">—</b></div>
-        <div class="row"><span>盐</span><b id="s_salt">—</b></div>
-        <div class="row"><span>味精</span><b id="s_msg">—</b></div>
-        <div class="row"><span>酱油</span><b id="s_soy">—</b></div>
-        <div class="row"><span>白糖</span><b id="s_sugar">—</b></div>
-        <div class="row"><span>小苏打</span><b id="s_soda">—</b></div>
-        <div class="calc-note">调好冷藏 ≥1h；小苏打可先放一半试味。</div>
-      </div>
-      <div class="calc-box">
-        <h4>🌶️ 刀削面（含辣汤）</h4>
-        <div class="row"><span>面粉 + 盐 + 水</span><b id="k_dough">—</b></div>
-        <div class="row"><span>牛肉（细条）</span><b id="k_beef">—</b></div>
-        <div class="row"><span>牛骨</span><b id="k_bone">—</b></div>
-        <div class="row"><span>熬汤清水</span><b id="k_water">—</b></div>
-        <div class="row"><span>豆油</span><b id="k_oil">—</b></div>
-        <div class="row"><span>辣椒面</span><b id="k_chili">—</b></div>
-        <div class="row"><span>麻椒</span><b id="k_ma">—</b></div>
-        <div class="calc-note">油:辣椒≈2:1；牛肉炸干后入汤熬 1~2h。</div>
-      </div>
-      <div class="calc-box">
-        <h4>🥗 辣菜 · 调味建议起步量（每道）</h4>
-        <div class="row"><span>盐</span><b id="l_salt">—</b></div>
-        <div class="row"><span>味精</span><b id="l_msg">—</b></div>
-        <div class="row"><span>白芝麻</span><b id="l_sesame">—</b></div>
-        <div class="calc-note">标准原文为「适量」，此为方便家庭的<b>建议起步量</b>；所有辣菜都加盐/味精/芝麻，酸甜另加糖/醋。<b>用油标准未给克数</b>，以「红油包裹、油亮」为准。</div>
+      <div class="res">
+        <div class="rc">
+          <h4>🧊 冷面 · 面条</h4>
+          <div class="ln"><span>高筋面粉</span><b id="c_flour">—</b></div>
+          <div class="ln"><span>淀粉</span><b id="c_starch">—</b></div>
+          <div class="ln"><span>食用碱</span><b id="c_alk">—</b></div>
+          <div class="ln"><span>水</span><b id="c_water">—</b></div>
+          <div class="ln"><span>盐（可选）</span><b id="c_salt">—</b></div>
+          <div class="note">碱先温水化开 · 面团偏硬（含液≈42%）</div>
+        </div>
+        <div class="rc">
+          <h4>🥢 冷面 · 汤</h4>
+          <div class="ln"><span>凉白开</span><b id="s_water">—</b></div>
+          <div class="ln"><span>醋精 38°</span><b id="s_vin">—</b></div>
+          <div class="ln"><span>盐 / 味精</span><b id="s_sm">—</b></div>
+          <div class="ln"><span>白糖</span><b id="s_sugar">—</b></div>
+          <div class="ln"><span>酱油</span><b id="s_soy">—</b></div>
+          <div class="ln"><span>小苏打</span><b id="s_soda">—</b></div>
+          <div class="note">冷藏 ≥1h · 小苏打可先放一半试味</div>
+        </div>
+        <div class="rc">
+          <h4>🌶️ 刀削面（含辣汤）</h4>
+          <div class="ln"><span>面粉 / 盐 / 水</span><b id="k_dough">—</b></div>
+          <div class="ln"><span>牛肉 / 牛骨</span><b id="k_meat">—</b></div>
+          <div class="ln"><span>熬汤清水</span><b id="k_water">—</b></div>
+          <div class="ln"><span>豆油 / 辣椒面</span><b id="k_oil">—</b></div>
+          <div class="ln"><span>麻椒</span><b id="k_ma">—</b></div>
+          <div class="note">民间配方 · 油:辣椒≈2:1 · 牛肉炸干后久炖</div>
+        </div>
       </div>
     </div>
-    <div class="calc-note" style="padding:0 26px 4px">★ 上述为按标准比例/民间做法换算，刀削面与辣菜调味按口味"边尝边补"，未逐项缩放。</div>
   </section>
 
   <!-- 冷面 -->
-  <section class="card" id="lengmian">
-    <div class="bar c-noodle"></div>
-    <h2>🧊 鸡西大冷面（先调汤，趁冷藏做面）</h2>
-    <div class="badges">
-      <span class="badge">面粉:淀粉 10:7</span>
-      <span class="badge">碱:水 7:100</span>
-      <span class="badge">混合粉:碱水 50:21</span>
-      <span class="badge">面径 1~1.5mm</span>
-      <span class="badge">汤 4~8℃</span>
+  <section class="block" id="lengmian">
+    <div class="shead">
+      <span class="idx">01</span>
+      <span class="t" style="color:var(--ice)">鸡西大冷面</span>
+      <span class="lede">两个灵魂字——压、凉</span>
     </div>
-    <div class="diagram">
+    <div class="cols">
+      <div class="panel">
+        <h3>🧊 面条 <span style="font-weight:400;color:var(--faint);font-size:12px">／ 4 人份</span></h3>
+        <div class="ing"><span>高筋面粉</span><span class="v">250 g</span></div>
+        <div class="ing"><span>马铃薯／木薯淀粉</span><span class="v">175 g</span></div>
+        <div class="ing"><span>食用碱</span><span class="v">12 g</span></div>
+        <div class="ing"><span>水</span><span class="v">167 ml</span></div>
+        <div class="ing"><span>盐（可选）</span><span class="v">3 g</span></div>
+      </div>
+      <div class="panel">
+        <h3>🥢 冷面汤 <span style="font-weight:400;color:var(--faint);font-size:12px">／ 1.5 L</span></h3>
+        <div class="ing"><span>凉饮用水 10–12℃</span><span class="v">1500 ml</span></div>
+        <div class="ing"><span>醋精 38°（或白醋 100–170）</span><span class="v">22.5 g</span></div>
+        <div class="ing"><span>盐 · 味精</span><span class="v">15 · 15 g</span></div>
+        <div class="ing"><span>白糖 · 酱油</span><span class="v">7.5 · 4.5 g</span></div>
+        <div class="ing"><span>小苏打</span><span class="v">22.5 g</span></div>
+      </div>
+    </div>
+    <div class="tips">
+      <div class="tip" style="--accent:var(--ice)"><b>先调汤冰镇</b><span>趁冷藏 1h 去和面、压面、煮面</span></div>
+      <div class="tip" style="--accent:var(--ice)"><b>碱先化开</b><span>40–50℃ 温水溶碱，避免碱斑</span></div>
+      <div class="tip" style="--accent:var(--ice)"><b>拔凉要透</b><span>凉水反复冲到冰凉，才爽滑弹牙</span></div>
+    </div>
+    <div class="flow">
+      <div class="cap">Process · 制作流程</div>
 <pre class="mermaid">
 flowchart TD
-  S1["🧊 1.5L 凉白开 10~12℃"] --> S2["加醋精 22.5g 稀释"]
-  S2 --> S3["加盐/味精/酱油/糖/小苏打<br/>搅匀溶解"]
-  S3 --> S4["❄️ 冰箱冷藏 ≥1h"]
-  N1["💧 温水化碱+盐<br/>碱盐水 碱:水=7:100"] --> N2["面粉250+淀粉175<br/>10:7 混匀"]
-  N2 --> N3["倒碱水和面<br/>揉 20~30min 偏硬"]
-  N3 --> N4["揉粗条→湿布醒 20~30min"]
-  N4 --> N5["压面机压 1~1.5mm 圆条"]
-  N5 --> N6["沸水煮 2~3min"]
-  N6 --> N7["凉水反复冲透（拔凉）"]
-  N7 --> N8["缠团装碗"]
-  S4 --> G["🍜 浇冰镇冷面汤 4~8℃"]
-  N8 --> G
-  G --> H["🥢 加冷面帽<br/>辣白菜/黄瓜丝/牛肉片/卤蛋等"]
+  S1["凉白开 1.5L"] --> S2["加醋精稀释"] --> S3["盐/味精/糖/酱油/小苏打"] --> S4["冰箱冷藏 ≥1h"]
+  N1["温水化碱+盐"] --> N2["面粉:淀粉 10:7 混匀"] --> N3["和面揉 20～30min · 偏硬"] --> N4["醒 20～30min"]
+  N4 --> N5["压面机压 1～1.5mm"] --> N6["沸水煮 2～3min"] --> N7["凉水反复拔凉"] --> N8["缠团装碗"]
+  S4 --> G["浇冰镇汤 4～8℃"]
+  N8 --> G --> H["加冷面帽 · 辣白菜/黄瓜/牛肉/卤蛋"]
   class S1,S2,S3,S4 soup
-  class N1,N2,N3,N4,N5,N6,N7,N8 noodle
-  class G finish
-  class H side
-  classDef soup fill:#fff1ec,stroke:#e8633a,stroke-width:1.5px,color:#7a2e12;
-  classDef noodle fill:#eef4ff,stroke:#3a72e8,stroke-width:1.5px,color:#16306e;
-  classDef side fill:#eefaf0,stroke:#36a35a,stroke-width:1.5px,color:#155e2c;
-  classDef finish fill:#fffbe6,stroke:#e0a800,stroke-width:1.5px,color:#7a5b00;
+  class N1,N2,N3,N4,N5,N6,N7,N8 cool
+  class G,H fin
+  classDef soup fill:#f6e4de,stroke:#c1432b,color:#7a2414,stroke-width:1.4px;
+  classDef cool fill:#e3ebf5,stroke:#3a6ea8,color:#1f3f6b,stroke-width:1.4px;
+  classDef fin fill:#f7ead7,stroke:#d3892f,color:#7a4d12,stroke-width:1.4px;
 </pre>
     </div>
   </section>
 
   <!-- 刀削面 -->
-  <section class="card" id="daoxiao">
-    <div class="bar c-soup"></div>
-    <h2>🌶️ 鸡西刀削面</h2>
-    <div class="badges">
-      <span class="badge">油:辣椒 ≈ 2:1</span>
-      <span class="badge">牛骨汤 2~3h</span>
-      <span class="badge">合炖 1~2h</span>
-      <span class="badge">香辣带麻</span>
+  <section class="block" id="daoxiao">
+    <div class="shead">
+      <span class="idx">02</span>
+      <span class="t" style="color:var(--chili)">鸡西刀削面</span>
+      <span class="lede">秘制牛肉条 · 香辣带麻红汤</span>
     </div>
-    <div class="diagram">
+    <p class="tagline">无省级标准，按民间正宗做法整理 · 4 人份</p>
+    <div class="cols">
+      <div class="panel">
+        <h3>🌶️ 辣汤</h3>
+        <div class="ing"><span>牛肉（细条）· 牛骨</span><span class="v">600 · 300 g</span></div>
+        <div class="ing"><span>豆油 · 辣椒面</span><span class="v">350 · 150 g</span></div>
+        <div class="ing"><span>麻椒</span><span class="v">5–8 g</span></div>
+        <div class="ing"><span>蒜片 · 姜丝 · 葱段</span><span class="v">20 · 15 · 30 g</span></div>
+        <div class="ing"><span>老抽 · 盐 · 味精/鸡精</span><span class="v">适量</span></div>
+      </div>
+      <div class="panel">
+        <h3>🌿 香料包 · 刀削面</h3>
+        <div class="ing"><span>桂皮·八角·花椒·白胡椒·香叶</span><span class="v">基础</span></div>
+        <div class="ing"><span>白芷·良姜·小茴香·草果·山奈·孜然</span><span class="v">中味</span></div>
+        <div class="ing"><span>肉寇·丁香</span><span class="v">各 1 g</span></div>
+        <div class="ing"><span>面粉 · 盐 · 水</span><span class="v">400 · 4 g · 180 ml</span></div>
+        <div class="ing"><span>配菜小碟</span><span class="v">大头菜/榨菜/卤蛋…</span></div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="cap">Process · 制作流程</div>
 <pre class="mermaid">
 flowchart TD
-  A1["🦴 牛骨焯水洗净"] --> A2["加香料包+水<br/>小火熬 2~3h 撇沫"]
-  A2 --> A3["捞出骨与料包"]
-  B1["🛢️ 豆油烧热<br/>牛肉条炸干熟透"] --> B2["小火下蒜/姜/葱"]
-  B2 --> B3["下辣椒面/麻椒<br/>炒出红油"]
-  A3 --> C1["红油牛肉入牛骨汤<br/>熬 1~2h"]
-  B3 --> C1
-  C1 --> C2["下老抽，尝味后<br/>补盐/味精/白糖少许"]
-  D1["🥟 面粉+盐+水<br/>揉偏硬光滑面团"] --> D2["醒 30min"]
-  D2 --> D3["削薄片入沸水<br/>浮起煮 3min 捞出"]
-  C2 --> E["🍲 装碗：浇热辣汤+红油<br/>点 1~2 根香菜"]
+  A1["牛骨焯水"] --> A2["+香料包+水 熬 2～3h"] --> A3["捞出骨与料包"]
+  B1["豆油烧热 · 牛肉条炸干"] --> B2["蒜姜葱"] --> B3["辣椒面/麻椒 炒红油"]
+  A3 --> C1["合汤熬 1～2h"]
+  B3 --> C1 --> C2["老抽 · 尝味补盐/糖"]
+  D1["面粉+盐+水 偏硬团"] --> D2["醒 30min"] --> D3["削片入沸水 3min"]
+  C2 --> E["装碗 · 浇红汤红油 · 点香菜"]
   D3 --> E
-  E --> F["🥗 配菜小碟另上<br/>大头菜/榨菜/干豆腐/香肠/卤蛋"]
   class A1,A2,A3,C1,C2 soup
   class B1,B2,B3 oil
-  class D1,D2,D3 noodle
-  class E finish
-  class F side
-  classDef soup fill:#fff1ec,stroke:#e8633a,stroke-width:1.5px,color:#7a2e12;
-  classDef noodle fill:#eef4ff,stroke:#3a72e8,stroke-width:1.5px,color:#16306e;
-  classDef side fill:#eefaf0,stroke:#36a35a,stroke-width:1.5px,color:#155e2c;
-  classDef oil fill:#fbf0ff,stroke:#a64ee0,stroke-width:1.5px,color:#5a1a7a;
-  classDef finish fill:#fffbe6,stroke:#e0a800,stroke-width:1.5px,color:#7a5b00;
+  class D1,D2,D3 cool
+  class E fin
+  classDef soup fill:#f6e4de,stroke:#c1432b,color:#7a2414,stroke-width:1.4px;
+  classDef oil fill:#f1e2ee,stroke:#8a567f,color:#532449,stroke-width:1.4px;
+  classDef cool fill:#f7f1e6,stroke:#b1832a,color:#6b4f12,stroke-width:1.4px;
+  classDef fin fill:#f7ead7,stroke:#d3892f,color:#7a4d12,stroke-width:1.4px;
 </pre>
     </div>
   </section>
 
-  <!-- 辣菜：流程 -->
-  <section class="card" id="lacai">
-    <div class="bar c-side"></div>
-    <h2>🥬 辣菜（凉拌通用流程）</h2>
-    <div class="badges">
-      <span class="badge">油温 210~240℃→160~180℃</span>
-      <span class="badge">油:辣椒 ≈ 2:1</span>
-      <span class="badge">水发辣椒 250:450:1:2</span>
-      <span class="badge">色泽油亮·红油包裹</span>
+  <!-- 辣菜 -->
+  <section class="block" id="lacai">
+    <div class="shead">
+      <span class="idx">03</span>
+      <span class="t" style="color:var(--herb)">辣菜</span>
+      <span class="lede">凉拌技法 · 红油包裹 · 色泽油亮</span>
     </div>
-    <div class="diagram">
-<pre class="mermaid">
-flowchart TD
-  O1["🌶️ 辣椒片"] --> O2["豆油 210~240℃<br/>降至 160~180℃"]
-  O2 --> O3["泼入辣椒静置 8h 出红油<br/>油:辣椒≈2:1"]
-  P1["🥗 主料处理<br/>焯水/泡发/切配"] --> P2["加配料<br/>胡萝卜丝/圆葱丝/芹菜等"]
-  P2 --> Q{"口味"}
-  Q -->|咸香| R1["盐+味精+白芝麻"]
-  Q -->|酸甜| R2["盐+味精+白糖+白醋"]
-  R1 --> Z["淋辣椒油拌匀（红油包裹）"]
-  R2 --> Z
-  O3 --> Z
-  Z --> ZZ["✅ 成菜：色泽油亮、拌制均匀"]
-  W1["🫙 辣椒面:水:盐:味精<br/>=250:450:1:2"] --> W2["开水搅匀<br/>发酵约 12h 微酸"]
-  W2 --> W3["冷藏备用，配大头菜"]
-  class O1,O2,O3,W1,W2,W3 oil
-  class P1,P2 side
-  class R1 soup
-  class R2 noodle
-  class Z,ZZ finish
-  classDef soup fill:#fff1ec,stroke:#e8633a,stroke-width:1.5px,color:#7a2e12;
-  classDef noodle fill:#eef4ff,stroke:#3a72e8,stroke-width:1.5px,color:#16306e;
-  classDef side fill:#eefaf0,stroke:#36a35a,stroke-width:1.5px,color:#155e2c;
-  classDef oil fill:#fbf0ff,stroke:#a64ee0,stroke-width:1.5px,color:#5a1a7a;
-  classDef finish fill:#fffbe6,stroke:#e0a800,stroke-width:1.5px,color:#7a5b00;
-</pre>
-    </div>
-  </section>
-
-  <!-- 辣菜：精确配比 -->
-  <section class="card">
-    <div class="bar c-oil"></div>
-    <h2>🫙 辣菜 · 源头精确配比（★ 标准原文，不可改）</h2>
-    <div class="callouts">
-      <div class="callout"><b>★ 干豆腐</b><span class="v">包心菜 : 干豆腐 = 3 : 10</span></div>
-      <div class="callout"><b>★ 水发辣椒</b><span class="v">辣椒面:水:盐:味精 = 250:450:1:2</span></div>
-      <div class="callout"><b>★ 辣椒油</b><span class="v">油 : 辣椒 ≈ 2 : 1</span></div>
-    </div>
-    <div class="spec">
-      <b>辣椒油工艺</b>：油烧至 210~240℃，降至 160~180℃ 泼入辣椒，静置 ≥8h ｜ <b>料油</b>：豆油 70℃ 浸炸香料后捞出（无配比）。<br>
-      <b>切配规格（mm）</b>：干豆腐厚 5·片 30~40 ｜ 豆腐卷 5~8 圆片 ｜ 海带丝 80~100 ｜ 裙带菜 50 ｜ 蕨菜 80 ｜ 腐竹 40 ｜ 牛肉片 长 60·厚 3~4 ｜ 圆葱丁 10 ｜ 辣椒片 40~50。<br>
-      <b>浸泡/发酵</b>：蕨菜 36h ｜ 山桔梗 12h+6~12h ｜ 黄花菜 1h ｜ 水发辣椒发酵 ~12h ｜ 辣椒油静置 ≥8h ｜ 花生米料水浸 20min。
-    </div>
-  </section>
-
-  <!-- 辣菜：配料·口味·用油（依标准，不含臆测克数） -->
-  <section class="card">
-    <div class="bar c-side"></div>
-    <h2>🥗 辣菜 · 配料·口味·用油（依标准，无臆测克数）</h2>
-    <div class="spec" style="padding-bottom:4px">标准对辣菜的<b>调味、配料、用油量</b>均写「<b>适量</b>」，配料只列名称、不给重量。故此表只给标准明确的：<b>用什么料、什么口味、哪种油</b>；不编造克数。精确数字见上方「源头精确配比」。</div>
-    <div class="uni">🧂 <b>调味通则（标准均「适量」，无克数）</b>：所有辣菜加 <b>盐·味精·白芝麻</b>；酸甜口味另加 <b>白糖·白醋</b>（山桔梗用醋精；拌粉皮另有少许白糖+酱油）。</div>
-    <div class="oil-legend">
-      用油类型：
-      <span class="chip oilA">带椒辣油</span>
-      <span class="chip oilB">无椒/稍带椒</span>
-      <span class="chip oilC">料油（不辣）</span>
+    <div class="ruleline">🧂 <b>调味通则</b>（标准均「适量」，无克数）：所有辣菜加 <b>盐·味精·白芝麻</b>；酸甜口味另加 <b>白糖·白醋</b>（山桔梗用醋精，拌粉皮加少许糖+酱油）。&nbsp;
+      <b>用油</b>只标类型，量以「色泽油亮」为准。
+      <span class="chip oA" style="margin-left:4px">带椒</span>
+      <span class="chip oB">无椒/稍带椒</span>
+      <span class="chip oC">料油</span>
     </div>
     <div class="scroll">
-      <table class="tbl">
-        <thead><tr><th>辣菜</th><th>口味</th><th class="left">主料（切配）</th><th class="left">配料</th><th>用油</th></tr></thead>
+      <table>
+        <thead><tr><th>辣菜</th><th class="center">口味</th><th>主料（切配）</th><th>配料</th><th class="center">用油</th></tr></thead>
         <tbody>
-          <tr class="catrow"><td colspan="5">🫘 豆制品</td></tr>
-          <tr><td class="dish">干豆腐</td><td><span class="chip tagS">咸</span></td><td class="left">手工干豆腐（5mm·30～40mm片）</td><td class="left"><span class="star">★</span>包心菜（与干豆腐 3:10）</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr><td class="dish">豆腐钱</td><td><span class="chip tagS">咸</span></td><td class="left">豆腐卷（5～8mm圆片）</td><td class="left">包白菜·白圆葱丝·胡萝卜丝·焯芹菜段</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr><td class="dish">豆腐泡</td><td><span class="chip tagT">甜</span></td><td class="left">炸豆腐泡</td><td class="left">—</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr><td class="dish">腐竹</td><td><span class="chip tagT">甜</span></td><td class="left">泡发腐竹（40mm段）</td><td class="left">胡萝卜丝·白圆葱丝·焯芹菜段</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr class="catrow"><td colspan="5">🥬 蔬菜·野菜</td></tr>
-          <tr><td class="dish">黄豆芽</td><td><span class="chip tagS">咸</span></td><td class="left">黄豆芽（焯断生）</td><td class="left">白圆葱丝·胡萝卜丝·焯芹菜叶</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr><td class="dish">大头菜</td><td><span class="chip tagS">咸</span></td><td class="left">大头菜（切丝/块）</td><td class="left">—</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr><td class="dish">土豆丝</td><td><span class="chip tagS">咸</span></td><td class="left">马铃薯丝（焯断生）</td><td class="left">芹菜段·圆葱丝·胡萝卜丝</td><td><span class="chip oilC">料油</span></td></tr>
-          <tr><td class="dish">拌菠菜</td><td><span class="chip tagS">咸</span></td><td class="left">菠菜（焯·攥干·切段）</td><td class="left">胡萝卜丝·白圆葱丝</td><td><span class="chip oilC">料油</span></td></tr>
-          <tr><td class="dish">蕨菜</td><td><span class="chip tagS">咸</span></td><td class="left">蕨菜（泡36h·80mm段·焯）</td><td class="left">胡萝卜丝·白圆葱丝</td><td><span class="chip oilB">无椒</span></td></tr>
-          <tr><td class="dish">黄花菜</td><td><span class="chip tagT">甜</span></td><td class="left">黄花菜（泡1h）</td><td class="left">白圆葱丝·焯芹菜段</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr><td class="dish">山桔梗</td><td><span class="chip tagT">甜</span></td><td class="left">山桔梗（泡发·糖+醋精泡制）</td><td class="left">—</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr class="catrow"><td colspan="5">🌊 菌藻·水产</td></tr>
-          <tr><td class="dish">海带丝/裙带菜</td><td><span class="chip tagS">咸</span></td><td class="left">海带丝80～100mm／裙带菜50mm（焯·过凉）</td><td class="left">胡萝卜丝·白圆葱丝</td><td><span class="chip oilA">带椒¹</span></td></tr>
-          <tr><td class="dish">明太鱼丝</td><td><span class="chip tagT">甜</span></td><td class="left">干明太鱼撕丝（喷水回软）</td><td class="left">—</td><td><span class="chip oilB">稍带椒</span></td></tr>
-          <tr><td class="dish">蚬子肉</td><td><span class="chip tagT">甜</span></td><td class="left">蚬子肉（泡发·去脏）</td><td class="left">圆葱丁（10mm）</td><td><span class="chip oilB">无椒</span></td></tr>
-          <tr class="catrow"><td colspan="5">🥩 肉类</td></tr>
-          <tr><td class="dish">牛肉片</td><td><span class="chip tagS">咸</span></td><td class="left">酱熟牛肉（60mm长·3～4mm厚）</td><td class="left">青椒丝·胡萝卜丝</td><td><span class="chip oilA">带椒</span></td></tr>
-          <tr class="catrow"><td colspan="5">🥜 坚果·粉皮</td></tr>
-          <tr><td class="dish">花生米</td><td><span class="chip tagS">咸</span></td><td class="left">花生米（葱姜八角花椒盐卤煮）</td><td class="left">芹菜段·胡萝卜丁</td><td><span class="chip oilC">料油</span></td></tr>
-          <tr><td class="dish">拌粉皮</td><td><span class="chip tagS">咸</span></td><td class="left">粉皮</td><td class="left">黄瓜片·白圆葱丝·胡萝卜丝·香菜段</td><td><span class="chip oilC">料油²</span></td></tr>
+          <tr class="catr"><td colspan="5">🫘 豆制品</td></tr>
+          <tr><td class="dish">干豆腐</td><td class="center"><span class="chip tS">咸</span></td><td>手工干豆腐 5mm·30–40mm片</td><td><span class="star">★</span> 包心菜（3:10）</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">豆腐钱</td><td class="center"><span class="chip tS">咸</span></td><td>豆腐卷 5–8mm 圆片</td><td>包白菜·圆葱丝·胡萝卜丝·焯芹菜</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">豆腐泡</td><td class="center"><span class="chip tT">甜</span></td><td>炸豆腐泡</td><td>—</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">腐竹</td><td class="center"><span class="chip tT">甜</span></td><td>泡发腐竹 40mm 段</td><td>胡萝卜丝·圆葱丝·焯芹菜</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr class="catr"><td colspan="5">🥬 蔬菜 · 野菜</td></tr>
+          <tr><td class="dish">黄豆芽</td><td class="center"><span class="chip tS">咸</span></td><td>黄豆芽（焯断生）</td><td>圆葱丝·胡萝卜丝·焯芹菜叶</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">大头菜</td><td class="center"><span class="chip tS">咸</span></td><td>大头菜 切丝/块</td><td>—</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">土豆丝</td><td class="center"><span class="chip tS">咸</span></td><td>马铃薯丝（焯断生）</td><td>芹菜段·圆葱丝·胡萝卜丝</td><td class="center"><span class="chip oC">料油</span></td></tr>
+          <tr><td class="dish">拌菠菜</td><td class="center"><span class="chip tS">咸</span></td><td>菠菜（焯·攥干·切段）</td><td>胡萝卜丝·圆葱丝</td><td class="center"><span class="chip oC">料油</span></td></tr>
+          <tr><td class="dish">蕨菜</td><td class="center"><span class="chip tS">咸</span></td><td>蕨菜 泡36h·80mm段·焯</td><td>胡萝卜丝·圆葱丝</td><td class="center"><span class="chip oB">无椒</span></td></tr>
+          <tr><td class="dish">黄花菜</td><td class="center"><span class="chip tT">甜</span></td><td>黄花菜（泡1h）</td><td>圆葱丝·焯芹菜</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">山桔梗</td><td class="center"><span class="chip tT">甜</span></td><td>山桔梗 泡发·糖+醋精泡制</td><td>—</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr class="catr"><td colspan="5">🌊 菌藻 · 水产</td></tr>
+          <tr><td class="dish">海带丝/裙带菜</td><td class="center"><span class="chip tS">咸</span></td><td>海带 80–100mm／裙带 50mm·焯</td><td>胡萝卜丝·圆葱丝</td><td class="center"><span class="chip oA">带椒¹</span></td></tr>
+          <tr><td class="dish">明太鱼丝</td><td class="center"><span class="chip tT">甜</span></td><td>干明太鱼撕丝·喷水回软</td><td>—</td><td class="center"><span class="chip oB">稍带椒</span></td></tr>
+          <tr><td class="dish">蚬子肉</td><td class="center"><span class="chip tT">甜</span></td><td>蚬子肉 泡发·去脏</td><td>圆葱丁 10mm</td><td class="center"><span class="chip oB">无椒</span></td></tr>
+          <tr class="catr"><td colspan="5">🥩 肉类</td></tr>
+          <tr><td class="dish">牛肉片</td><td class="center"><span class="chip tS">咸</span></td><td>酱熟牛肉 60mm长·3–4mm厚</td><td>青椒丝·胡萝卜丝</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr class="catr"><td colspan="5">🥜 坚果 · 粉皮</td></tr>
+          <tr><td class="dish">花生米</td><td class="center"><span class="chip tS">咸</span></td><td>花生米 葱姜八角花椒盐卤煮</td><td>芹菜段·胡萝卜丁</td><td class="center"><span class="chip oC">料油</span></td></tr>
+          <tr><td class="dish">拌粉皮</td><td class="center"><span class="chip tS">咸</span></td><td>粉皮</td><td>黄瓜片·圆葱丝·胡萝卜丝·香菜</td><td class="center"><span class="chip oC">料油²</span></td></tr>
         </tbody>
       </table>
     </div>
-    <div class="spec"><b>用油量</b>：标准只规定<b>类型</b>（带椒/无椒/料油）与成品<b>「色泽油亮」</b>，<b>未给克数</b>；以「红油包裹、油亮」为准自行掌握。<br>注：① 海带丝也可改「料油+蒜蓉+盐+味精」；② 拌粉皮另加少许白糖+酱油（标准）。</div>
+    <p class="tagline" style="margin-top:14px">注 ① 海带丝也可改「料油+蒜蓉+盐+味精」；② 拌粉皮另加少许白糖+酱油（标准）。</p>
+    <div class="flow">
+      <div class="cap">Process · 凉拌通用流程</div>
+<pre class="mermaid">
+flowchart TD
+  O1["辣椒片"] --> O2["豆油 210～240℃ 降至 160～180℃"] --> O3["泼辣椒静置 8h · 油:辣椒 2:1"]
+  P1["主料 焯水/泡发/切配"] --> P2["配料 胡萝卜/圆葱/芹菜"]
+  P2 --> Q{"口味"}
+  Q -->|咸香| R1["盐·味精·白芝麻"]
+  Q -->|酸甜| R2["盐·味精·芝麻 + 糖·醋"]
+  R1 --> Z["淋油拌匀 · 红油包裹"]
+  R2 --> Z
+  O3 --> Z --> ZZ["成菜 · 色泽油亮"]
+  class O1,O2,O3 oil
+  class P1,P2 veg
+  class R1,R2,Z,ZZ fin
+  classDef oil fill:#f1e2ee,stroke:#8a567f,color:#532449,stroke-width:1.4px;
+  classDef veg fill:#eef0e3,stroke:#4f7a48,color:#2f4a2b,stroke-width:1.4px;
+  classDef fin fill:#f7ead7,stroke:#d3892f,color:#7a4d12,stroke-width:1.4px;
+</pre>
+    </div>
   </section>
-
-  <footer>
-    冷面/辣菜依据省标 DB23/T 3702—2024 · 刀削面按民间正宗做法 ｜ ★=标准精确值，其余克数为参考估算 ｜ CC0 1.0
-  </footer>
 
 </div>
 
+<footer>
+  <div class="fb">「别回来，别思念我们，别往后看，别写信。」</div>
+  冷面/辣菜依据省标 DB23/T 3702—2024 · 刀削面为民间做法 · ★ 为标准精确比例，辣菜调味均「适量」不编造克数 · CC0 1.0
+</footer>
+
 <script>
-  // ===== 配方计算器 =====
-  const $ = id => document.getElementById(id);
-  // 取整：≥10 取整数，<10 保留 1 位小数
-  const fmt = (v, unit) => (v >= 10 ? Math.round(v) : Math.round(v*10)/10) + unit;
-  function calc(){
-    let n = parseFloat($('srv').value);
-    if(!(n > 0)){ n = 1; }
-    // 冷面·面（按精确比例：面粉:淀粉=10:7，混合粉:碱水=50:21，碱:水=7:100）
-    const flour = 62.5 * n;            // 每份面粉 62.5g（250g/4）
-    const starch = flour * 7/10;
-    const mix = flour + starch;
-    const alkWater = mix * 21/50;
-    const alk = alkWater * 7/107;
-    const water = alkWater * 100/107;
-    const dsalt = 0.75 * n;
-    $('c_flour').textContent = fmt(flour,' g');
-    $('c_starch').textContent = fmt(starch,' g');
-    $('c_alk').textContent = fmt(alk,' g');
-    $('c_water').textContent = fmt(water,' ml');
-    $('c_salt').textContent = fmt(dsalt,' g');
-    // 冷面·汤（每份=1500ml水/4=375ml 等比）
-    $('s_water').textContent = fmt(375*n,' ml');
-    $('s_vin').textContent   = fmt(5.625*n,' g');
-    $('s_salt').textContent  = fmt(3.75*n,' g');
-    $('s_msg').textContent   = fmt(3.75*n,' g');
-    $('s_soy').textContent   = fmt(1.125*n,' g');
-    $('s_sugar').textContent = fmt(1.875*n,' g');
-    $('s_soda').textContent  = fmt(5.625*n,' g');
-    // 刀削面（base 4 份：面粉400/盐4/水180；牛肉600/牛骨300/豆油350/辣椒面150/麻椒6.5）
-    $('k_dough').textContent = fmt(100*n,' g') + ' + 盐 ' + fmt(1*n,' g') + ' + 水 ' + fmt(45*n,' ml');
-    $('k_beef').textContent  = fmt(150*n,' g');
-    $('k_bone').textContent  = fmt(75*n,' g');
-    $('k_water').textContent = fmt(0.5*n,'') + '~' + fmt(0.625*n,' L');
-    $('k_oil').textContent   = fmt(87.5*n,' g');
-    $('k_chili').textContent = fmt(37.5*n,' g');
-    $('k_ma').textContent    = fmt(1.6*n,' g');
-    // 辣菜·统一调味（每道，按份数：盐0.75/味精0.5/芝麻0.5 每人）
-    $('l_salt').textContent   = fmt(0.75*n,' g');
-    $('l_msg').textContent    = fmt(0.5*n,' g');
-    $('l_sesame').textContent = fmt(0.5*n,' g');
+  const $=id=>document.getElementById(id);
+  const fmt=(v,u)=>(v>=10?Math.round(v):Math.round(v*10)/10)+u;
+  let n=4;
+  function render(){
+    $('srvVal').textContent=n;
+    // 冷面·面（精确比例运算）
+    const flour=62.5*n, starch=flour*7/10, mix=flour+starch, aw=mix*21/50;
+    $('c_flour').textContent=fmt(flour,' g');
+    $('c_starch').textContent=fmt(starch,' g');
+    $('c_alk').textContent=fmt(aw*7/107,' g');
+    $('c_water').textContent=fmt(aw*100/107,' ml');
+    $('c_salt').textContent=fmt(0.75*n,' g');
+    // 冷面·汤
+    $('s_water').textContent=fmt(375*n,' ml');
+    $('s_vin').textContent=fmt(5.625*n,' g');
+    $('s_sm').textContent=fmt(3.75*n,' g')+' · '+fmt(3.75*n,' g');
+    $('s_sugar').textContent=fmt(1.875*n,' g');
+    $('s_soy').textContent=fmt(1.125*n,' g');
+    $('s_soda').textContent=fmt(5.625*n,' g');
+    // 刀削面
+    $('k_dough').textContent=fmt(100*n,' g')+' · '+fmt(1*n,' g')+' · '+fmt(45*n,' ml');
+    $('k_meat').textContent=fmt(150*n,' g')+' · '+fmt(75*n,' g');
+    $('k_water').textContent=fmt(0.5*n,'')+'–'+fmt(0.625*n,' L');
+    $('k_oil').textContent=fmt(87.5*n,' g')+' · '+fmt(37.5*n,' g');
+    $('k_ma').textContent=fmt(1.6*n,' g');
   }
-  $('srv').addEventListener('input', ()=>{ setActive(parseFloat($('srv').value)); calc(); });
-  function setActive(n){ document.querySelectorAll('.qbtn').forEach(b=>b.classList.toggle('act', +b.dataset.n===n)); }
-  document.querySelectorAll('.qbtn').forEach(b=>b.addEventListener('click', ()=>{
-    $('srv').value = b.dataset.n; setActive(+b.dataset.n); calc();
-  }));
-  calc();
+  $('inc').onclick=()=>{n=Math.min(50,n+1);render()};
+  $('dec').onclick=()=>{n=Math.max(1,n-1);render()};
+  render();
 </script>
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad:true, theme:'base',
-    flowchart:{ curve:'basis', nodeSpacing:42, rankSpacing:46, useMaxWidth:true },
-    themeVariables:{
-      fontFamily:'-apple-system,"PingFang SC","Microsoft YaHei",sans-serif',
-      fontSize:'14px', lineColor:'#b9b3a8',
-      primaryColor:'#ffffff', primaryBorderColor:'#cfc9bd', primaryTextColor:'#2b2b2b'
-    }
-  });
+  mermaid.initialize({startOnLoad:true,theme:'base',
+    flowchart:{curve:'basis',nodeSpacing:36,rankSpacing:40,useMaxWidth:true},
+    themeVariables:{fontFamily:'"Noto Sans SC",sans-serif',fontSize:'13px',lineColor:'#cdbfa9',
+      primaryColor:'#fffdf8',primaryBorderColor:'#d8cdb8',primaryTextColor:'#221d18'}});
 </script>
 </body>
 </html>
