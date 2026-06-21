@@ -30,6 +30,12 @@
   .nav .links{display:flex;gap:4px;flex-wrap:wrap}
   .nav a{font-size:13.5px;color:var(--soft);text-decoration:none;padding:7px 13px;border-radius:99px;font-weight:500;transition:.2s}
   .nav a:hover{background:#efe7d8;color:var(--ink)}
+  .nav .srv{display:flex;align-items:center;gap:9px;flex:none}
+  .nav .srv button{width:29px;height:29px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:19px;line-height:1;color:var(--ink);cursor:pointer;font-family:var(--serif);transition:.15s;padding:0}
+  .nav .srv button:hover{background:var(--chili);color:#fff;border-color:var(--chili)}
+  .nav .srv b{font-family:var(--serif);font-weight:700;font-size:15px;min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+  .nav .srv small{font-weight:500;color:var(--soft);font-size:12px}
+  @media(max-width:768px){.nav .links{display:none}}
 
   /* ---------- hero ---------- */
   .hero{text-align:center;padding:78px 0 52px}
@@ -121,6 +127,11 @@
     <a href="#daoxiao">刀削面</a>
     <a href="#lacai">辣菜</a>
   </span>
+  <span class="srv" title="改变份数，全页用量随之换算">
+    <button id="navDec" aria-label="减一份">−</button>
+    <b><span id="navVal">4</span><small> 人份</small></b>
+    <button id="navInc" aria-label="加一份">+</button>
+  </span>
 </div></nav>
 
 <div class="wrap">
@@ -182,12 +193,12 @@
         <div class="rc">
           <h4>🥢 冷面 · 汤</h4>
           <div class="ln"><span>凉白开</span><b id="s_water">—</b></div>
-          <div class="ln"><span>醋精 38°</span><b id="s_vin">—</b></div>
+          <div class="ln"><span>9度白醋</span><b id="s_vin">—</b></div>
           <div class="ln"><span>盐 / 味精</span><b id="s_sm">—</b></div>
           <div class="ln"><span>白糖</span><b id="s_sugar">—</b></div>
           <div class="ln"><span>酱油</span><b id="s_soy">—</b></div>
           <div class="ln"><span>小苏打</span><b id="s_soda">—</b></div>
-          <div class="note">冷藏 ≥1h · 小苏打可先放一半试味</div>
+          <div class="note">9度白醋（醋精×38⁄9）· 水已扣其体积 · 汤总量 375ml/份 · 冷藏 ≥1h</div>
         </div>
         <div class="rc">
           <h4>🌶️ 刀削面（含辣汤）</h4>
@@ -211,32 +222,33 @@
     </div>
     <div class="cols">
       <div class="panel">
-        <h3>🧊 面条 <span style="font-weight:400;color:var(--faint);font-size:12px">／ 4 人份</span></h3>
-        <div class="ing"><span>高筋面粉</span><span class="v">250 g</span></div>
-        <div class="ing"><span>马铃薯／木薯淀粉</span><span class="v">175 g</span></div>
-        <div class="ing"><span>食用碱</span><span class="v">12 g</span></div>
-        <div class="ing"><span>水</span><span class="v">167 ml</span></div>
-        <div class="ing"><span>盐（可选）</span><span class="v">3 g</span></div>
+        <h3>🧊 面条 <span style="font-weight:400;color:var(--faint);font-size:12px">／ <span id="lm_serv">4</span> 人份</span></h3>
+        <div class="ing"><span>高筋面粉</span><span class="v" id="p_flour">250 g</span></div>
+        <div class="ing"><span>马铃薯／木薯淀粉</span><span class="v" id="p_starch">175 g</span></div>
+        <div class="ing"><span>食用碱</span><span class="v" id="p_alk">12 g</span></div>
+        <div class="ing"><span>水</span><span class="v" id="p_water">167 ml</span></div>
+        <div class="ing"><span>盐（可选）</span><span class="v" id="p_salt">3 g</span></div>
       </div>
       <div class="panel">
-        <h3>🥢 冷面汤 <span style="font-weight:400;color:var(--faint);font-size:12px">／ 1.5 L</span></h3>
-        <div class="ing"><span>凉饮用水 10–12℃</span><span class="v">1500 ml</span></div>
-        <div class="ing"><span>醋精 38°（或白醋 100–170）</span><span class="v">22.5 g</span></div>
-        <div class="ing"><span>盐 · 味精</span><span class="v">15 · 15 g</span></div>
-        <div class="ing"><span>白糖 · 酱油</span><span class="v">7.5 · 4.5 g</span></div>
-        <div class="ing"><span>小苏打</span><span class="v">22.5 g</span></div>
+        <h3>🥢 冷面汤 <span style="font-weight:400;color:var(--faint);font-size:12px">／ 约 <span id="lm_vol">1.5 L</span></span></h3>
+        <div class="ing"><span>凉饮用水 10–12℃</span><span class="v" id="q_water">1405 ml</span></div>
+        <div class="ing"><span>9度白醋</span><span class="v" id="q_vin">95 ml</span></div>
+        <div class="ing"><span>盐 · 味精</span><span class="v"><span id="q_salt">15</span> · <span id="q_msg">15 g</span></span></div>
+        <div class="ing"><span>白糖 · 酱油</span><span class="v"><span id="q_sugar">7.5</span> · <span id="q_soy">4.5 g</span></span></div>
+        <div class="ing"><span>小苏打</span><span class="v" id="q_soda">22.5 g</span></div>
       </div>
     </div>
     <div class="tips">
       <div class="tip" style="--accent:var(--ice)"><b>先调汤冰镇</b><span>趁冷藏 1h 去和面、压面、煮面</span></div>
       <div class="tip" style="--accent:var(--ice)"><b>碱先化开</b><span>40–50℃ 温水溶碱，避免碱斑</span></div>
       <div class="tip" style="--accent:var(--ice)"><b>拔凉要透</b><span>凉水反复冲到冰凉，才爽滑弹牙</span></div>
+      <div class="tip" style="--accent:var(--chili)"><b>白醋换算</b><span>9度白醋＝38度醋精×38⁄9；白醋偏稀，其体积已从凉白开里扣除，汤量不变</span></div>
     </div>
     <div class="flow">
       <div class="cap">Process · 制作流程</div>
 <pre class="mermaid">
 flowchart TD
-  S1["凉白开 1.5L"] --> S2["加醋精稀释"] --> S3["盐/味精/糖/酱油/小苏打"] --> S4["冰箱冷藏 ≥1h"]
+  S1["凉白开 1.405L"] --> S2["加9度白醋 95ml 稀释"] --> S3["盐/味精/糖/酱油/小苏打"] --> S4["冰箱冷藏 ≥1h"]
   N1["温水化碱+盐"] --> N2["面粉:淀粉 10:7 混匀"] --> N3["和面揉 20～30min · 偏硬"] --> N4["醒 20～30min"]
   N4 --> N5["压面机压 1～1.5mm"] --> N6["沸水煮 2～3min"] --> N7["凉水反复拔凉"] --> N8["缠团装碗"]
   S4 --> G["浇冰镇汤 4～8℃"]
@@ -258,22 +270,22 @@ flowchart TD
       <span class="t" style="color:var(--chili)">鸡西刀削面</span>
       <span class="lede">秘制牛肉条 · 香辣带麻红汤</span>
     </div>
-    <p class="tagline">无省级标准，按民间正宗做法整理 · 4 人份</p>
+    <p class="tagline">无省级标准，按民间正宗做法整理 · <span id="dx_serv">4</span> 人份</p>
     <div class="cols">
       <div class="panel">
         <h3>🌶️ 辣汤</h3>
-        <div class="ing"><span>牛肉（细条）· 牛骨</span><span class="v">600 · 300 g</span></div>
-        <div class="ing"><span>豆油 · 辣椒面</span><span class="v">350 · 150 g</span></div>
-        <div class="ing"><span>麻椒</span><span class="v">5–8 g</span></div>
-        <div class="ing"><span>蒜片 · 姜丝 · 葱段</span><span class="v">20 · 15 · 30 g</span></div>
+        <div class="ing"><span>牛肉（细条）· 牛骨</span><span class="v"><span id="d_beef">600</span> · <span id="d_bone">300 g</span></span></div>
+        <div class="ing"><span>豆油 · 辣椒面</span><span class="v"><span id="d_oil">350</span> · <span id="d_chili">150 g</span></span></div>
+        <div class="ing"><span>麻椒</span><span class="v" id="d_ma">5–8 g</span></div>
+        <div class="ing"><span>蒜片 · 姜丝 · 葱段</span><span class="v"><span id="d_garlic">20</span> · <span id="d_ginger">15</span> · <span id="d_scallion">30 g</span></span></div>
         <div class="ing"><span>老抽 · 盐 · 味精/鸡精</span><span class="v">适量</span></div>
       </div>
       <div class="panel">
         <h3>🌿 香料包 · 刀削面</h3>
         <div class="ing"><span>桂皮·八角·花椒·白胡椒·香叶</span><span class="v">基础</span></div>
         <div class="ing"><span>白芷·良姜·小茴香·草果·山奈·孜然</span><span class="v">中味</span></div>
-        <div class="ing"><span>肉寇·丁香</span><span class="v">各 1 g</span></div>
-        <div class="ing"><span>面粉 · 盐 · 水</span><span class="v">400 · 4 g · 180 ml</span></div>
+        <div class="ing"><span>肉寇·丁香</span><span class="v">各 <span id="d_spice">1</span> g</span></div>
+        <div class="ing"><span>面粉 · 盐 · 水</span><span class="v"><span id="d_flour">400</span> · <span id="d_dsalt">4</span> g · <span id="d_dwater">180</span> ml</span></div>
         <div class="ing"><span>配菜小碟</span><span class="v">大头菜/榨菜/卤蛋…</span></div>
       </div>
     </div>
@@ -307,7 +319,7 @@ flowchart TD
       <span class="t" style="color:var(--herb)">辣菜</span>
       <span class="lede">凉拌技法 · 红油包裹 · 色泽油亮</span>
     </div>
-    <div class="ruleline">🧂 <b>调味通则</b>（标准均「适量」，无克数）：所有辣菜加 <b>盐·味精·白芝麻</b>；酸甜口味另加 <b>白糖·白醋</b>（山桔梗用醋精，拌粉皮加少许糖+酱油）。&nbsp;
+    <div class="ruleline">🧂 <b>调味通则</b>（标准均「适量」，无克数）：所有辣菜加 <b>盐·味精·白芝麻</b>；酸甜口味另加 <b>白糖·白醋</b>（山桔梗用9度白醋，拌粉皮加少许糖+酱油）。&nbsp;
       <b>用油</b>只标类型，量以「色泽油亮」为准。
       <span class="chip oA" style="margin-left:4px">带椒</span>
       <span class="chip oB">无椒/稍带椒</span>
@@ -329,7 +341,7 @@ flowchart TD
           <tr><td class="dish">拌菠菜</td><td class="center"><span class="chip tS">咸</span></td><td>菠菜（焯·攥干·切段）</td><td>胡萝卜丝·圆葱丝</td><td class="center"><span class="chip oC">料油</span></td></tr>
           <tr><td class="dish">蕨菜</td><td class="center"><span class="chip tS">咸</span></td><td>蕨菜 泡36h·80mm段·焯</td><td>胡萝卜丝·圆葱丝</td><td class="center"><span class="chip oB">无椒</span></td></tr>
           <tr><td class="dish">黄花菜</td><td class="center"><span class="chip tT">甜</span></td><td>黄花菜（泡1h）</td><td>圆葱丝·焯芹菜</td><td class="center"><span class="chip oA">带椒</span></td></tr>
-          <tr><td class="dish">山桔梗</td><td class="center"><span class="chip tT">甜</span></td><td>山桔梗 泡发·糖+醋精泡制</td><td>—</td><td class="center"><span class="chip oA">带椒</span></td></tr>
+          <tr><td class="dish">山桔梗</td><td class="center"><span class="chip tT">甜</span></td><td>山桔梗 泡发·糖+9度白醋泡制</td><td>—</td><td class="center"><span class="chip oA">带椒</span></td></tr>
           <tr class="catr"><td colspan="5">🌊 菌藻 · 水产</td></tr>
           <tr><td class="dish">海带丝/裙带菜</td><td class="center"><span class="chip tS">咸</span></td><td>海带 80–100mm／裙带 50mm·焯</td><td>胡萝卜丝·圆葱丝</td><td class="center"><span class="chip oA">带椒¹</span></td></tr>
           <tr><td class="dish">明太鱼丝</td><td class="center"><span class="chip tT">甜</span></td><td>干明太鱼撕丝·喷水回软</td><td>—</td><td class="center"><span class="chip oB">稍带椒</span></td></tr>
@@ -374,33 +386,49 @@ flowchart TD
 
 <script>
   const $=id=>document.getElementById(id);
-  const fmt=(v,u)=>(v>=10?Math.round(v):Math.round(v*10)/10)+u;
+  const fmt=(v,u)=>(v>=10?Math.round(v):Math.round(v*10)/10)+(u||'');
+  const fmtVol=ml=>ml>=1000?(Math.round(ml/100)/10)+' L':Math.round(ml)+' ml';
+  const set=(ids,txt)=>ids.forEach(id=>{const el=$(id);if(el)el.textContent=txt;});
+  const VIN=38/9; // 9度白醋 等酸量替代 38度醋精 的折算系数
   let n=4;
+  function setN(v){n=Math.max(1,Math.min(50,v));render();}
   function render(){
-    $('srvVal').textContent=n;
-    // 冷面·面（精确比例运算）
+    set(['srvVal','navVal','lm_serv','dx_serv'],n);
+    // 冷面·面（精确比例运算）—— 换算器与配方面板同源
     const flour=62.5*n, starch=flour*7/10, mix=flour+starch, aw=mix*21/50;
-    $('c_flour').textContent=fmt(flour,' g');
-    $('c_starch').textContent=fmt(starch,' g');
-    $('c_alk').textContent=fmt(aw*7/107,' g');
-    $('c_water').textContent=fmt(aw*100/107,' ml');
-    $('c_salt').textContent=fmt(0.75*n,' g');
-    // 冷面·汤
-    $('s_water').textContent=fmt(375*n,' ml');
-    $('s_vin').textContent=fmt(5.625*n,' g');
+    set(['c_flour','p_flour'],fmt(flour,' g'));
+    set(['c_starch','p_starch'],fmt(starch,' g'));
+    set(['c_alk','p_alk'],fmt(aw*7/107,' g'));
+    set(['c_water','p_water'],fmt(aw*100/107,' ml'));
+    set(['c_salt','p_salt'],fmt(0.75*n,' g'));
+    // 冷面·汤：白醋按9度折算，凉白开扣除白醋体积，汤总量 375ml/份 不变
+    const total=375*n, vin=5.625*n*VIN, sw=total-vin;
+    set(['s_water','q_water'],fmt(sw,' ml'));
+    set(['s_vin','q_vin'],fmt(vin,' ml'));
+    set(['q_salt'],fmt(3.75*n)); set(['q_msg'],fmt(3.75*n,' g'));
     $('s_sm').textContent=fmt(3.75*n,' g')+' · '+fmt(3.75*n,' g');
-    $('s_sugar').textContent=fmt(1.875*n,' g');
-    $('s_soy').textContent=fmt(1.125*n,' g');
-    $('s_soda').textContent=fmt(5.625*n,' g');
-    // 刀削面
+    set(['s_sugar'],fmt(1.875*n,' g')); set(['q_sugar'],fmt(1.875*n));
+    set(['s_soy'],fmt(1.125*n,' g'));   set(['q_soy'],fmt(1.125*n,' g'));
+    set(['s_soda','q_soda'],fmt(5.625*n,' g'));
+    set(['lm_vol'],fmtVol(total));
+    // 刀削面（换算器卡片）
     $('k_dough').textContent=fmt(100*n,' g')+' · '+fmt(1*n,' g')+' · '+fmt(45*n,' ml');
     $('k_meat').textContent=fmt(150*n,' g')+' · '+fmt(75*n,' g');
     $('k_water').textContent=fmt(0.5*n,'')+'–'+fmt(0.625*n,' L');
     $('k_oil').textContent=fmt(87.5*n,' g')+' · '+fmt(37.5*n,' g');
     $('k_ma').textContent=fmt(1.6*n,' g');
+    // 刀削面（配方面板）
+    set(['d_beef'],fmt(150*n)); set(['d_bone'],fmt(75*n,' g'));
+    set(['d_oil'],fmt(87.5*n)); set(['d_chili'],fmt(37.5*n,' g'));
+    set(['d_ma'],fmt(1.25*n)+'–'+fmt(2*n,' g'));
+    set(['d_garlic'],fmt(5*n)); set(['d_ginger'],fmt(3.75*n)); set(['d_scallion'],fmt(7.5*n,' g'));
+    set(['d_spice'],fmt(0.25*n));
+    set(['d_flour'],fmt(100*n)); set(['d_dsalt'],fmt(1*n)); set(['d_dwater'],fmt(45*n));
   }
-  $('inc').onclick=()=>{n=Math.min(50,n+1);render()};
-  $('dec').onclick=()=>{n=Math.max(1,n-1);render()};
+  $('inc').onclick=()=>setN(n+1);
+  $('dec').onclick=()=>setN(n-1);
+  $('navInc').onclick=()=>setN(n+1);
+  $('navDec').onclick=()=>setN(n-1);
   render();
 </script>
 
